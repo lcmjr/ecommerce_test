@@ -17,7 +17,7 @@ class OrderSeeder extends Seeder
                 'cpf'      => '74552859064',
                 'phone'    => '11986985535',
                 'email'    => 'teste@teste.com',
-                'zip_code' => '19910-002',
+                'zip_code' => '19910002',
                 'state'    => 'sp',
                 'city'     => 'Ourinhos',
                 'district' => 'Loteamento Mitsui',

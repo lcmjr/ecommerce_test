@@ -23,7 +23,7 @@ Quando o container ecommerce-php-fpm informar:
 
 `ecommerce-php-fpm | [21-Jan-2019 20:08:05] NOTICE: systemd monitor interval set to 10000ms`
 
-O sistema estará no ar. Caso ocorra algum erro de conexão, só cancelar o processo com  `CTRL+C` e rodar novamente `docker-compose up`, ocorre se o container do mysql demorar muito para iniciar.
+O sistema estará no ar.
 
 # Como Remover: #
 

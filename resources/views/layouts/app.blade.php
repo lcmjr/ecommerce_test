@@ -35,5 +35,6 @@
 </nav>
 @yield('content')
 <link rel="stylesheet" href="{{mix('css/app.css')}}" type="text/css">
+@stack('scripts')
 </body>
 </html>

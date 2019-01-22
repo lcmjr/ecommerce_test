@@ -21,5 +21,8 @@ RUN apt-get update \
     && apt-get -y install git \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
+ADD waitForMySQL.sh /root/
+RUN chmod +x /root/waitForMySQL.sh
+
 #Permissão para a pasta storage, instala as dependencias, cria a estrutura de banco e roda o listener do php
 CMD chmod -R 775 storage && chown -R www-data storage && cp .env.example .env && composer install && php artisan migrate:refresh --seed && php-fpm

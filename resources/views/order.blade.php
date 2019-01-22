@@ -137,3 +137,39 @@
         @include('components.cartItemBox')
     </div>
 @stop
+
+@push('scripts')
+    <script src="https://unpkg.com/imask"></script>
+    <script>
+        var maskCPF = new IMask(document.getElementById('cpf-ipt'), {mask: '000.000.000-00'});
+        var maskPhone = new IMask(document.getElementById('phone-ipt'), {
+                mask: [
+                    {
+                        mask: '(00) 00000-0000',
+                        totalLength: 11,
+                    },
+                    {
+                        mask: '(00) 0000-0000',
+                        totalLength: 10,
+                    },
+                    {
+                        mask: '00000-0000',
+                        totalLength: 9,
+                    },
+                    {
+                        mask: '0000-0000',
+                        totalLength: 0,
+                    },
+                ],
+                dispatch: function (appended, dynamicMasked) {
+                    var number = (dynamicMasked.value + appended).replace(/\D/g, '');
+
+                    return dynamicMasked.compiledMasks.find(function (m) {
+                        return number.length >= m.totalLength;
+                    });
+                }
+            }
+        );
+        var maskZipCode = new IMask(document.getElementById('zip_code-ipt'), {mask: '00000-000'});
+    </script>
+@endpush
